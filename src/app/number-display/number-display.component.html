@@ -1,0 +1,12 @@
+<ion-list>
+  <ion-item>
+    <ion-label>Ingrese un número:</ion-label>
+    <ion-input type="number" [(ngModel)]="inputNumber" (ngModelChange)="updateList($event)"></ion-input>
+  </ion-item>
+
+  <ion-item *ngFor="let number of numbers" [style.color]="number.color">
+    {{ number.value }}
+  </ion-item>
+
+  <ion-button (click)="saveToFirebase()">Guardar en Firebase</ion-button>
+</ion-list>
